@@ -1,0 +1,22 @@
+{
+  "extends": "airbnb-base",
+  "env": {
+    "es6": true,
+    "browser": true,
+    "jest": true
+  },
+  "rules": {
+    "no-restricted-syntax": ["error", "LabeledStatement", "WithStatement"],
+    "arrow-parens": "off",
+    "quotes": ["error", "double"],
+    "implicit-arrow-linebreak": "off",
+    "comma-dangle": "off",
+    "no-unused-expressions": [2, { "allowTernary": true }],
+    "no-alert": "off",
+    "function-paren-newline": "off",
+    "no-console": "off",
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "operator-linebreak": "off",
+    "no-param-reassign": ["error", { "props": false }]
+  }
+}
