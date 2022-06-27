@@ -142,8 +142,12 @@ export default class GameController {
   }
 
   isOver() {
-    const allCharacterComputer = this.allPositions.filter((it) => this.isComputerTeam(it));
-    const allCharacterPlayer = this.allPositions.filter((it) => this.isPlayerTeam(it));
+    const allCharacterComputer = this.allPositions.filter((it) =>
+      this.isComputerTeam(it)
+    );
+    const allCharacterPlayer = this.allPositions.filter((it) =>
+      this.isPlayerTeam(it)
+    );
 
     if (allCharacterComputer.length === 0) {
       GamePlay.showMessage("Победа Игрока! Переход на другой уровень");
@@ -163,7 +167,9 @@ export default class GameController {
 
   goMove(item, index) {
     this.allPositions.forEach((it) => this.gamePlay.deselectCell(it.position));
-    this.allPositions = this.allPositions.filter((it) => it.position !== item.position);
+    this.allPositions = this.allPositions.filter(
+      (it) => it.position !== item.position
+    );
 
     item.position = index;
     this.allPositions.push(item);
@@ -172,9 +178,9 @@ export default class GameController {
 
   moveComputer() {
     this.gameState.movePlayer = true;
-    GamePlay.showMessage("Ход компьютера!");
-
-    const allCharacterComputer = this.allPositions.filter((it) => this.isComputerTeam(it));
+    const allCharacterComputer = this.allPositions.filter((it) =>
+      this.isComputerTeam(it)
+    );
 
     const allPositionsPlayer = this.allPositions
       .filter((it) => this.isPlayerTeam(it))
