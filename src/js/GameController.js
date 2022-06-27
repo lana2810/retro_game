@@ -122,7 +122,7 @@ export default class GameController {
   }
 
   async goAttack(attacker, target) {
-    GamePlay.showMessage("Ура!! Атака!");
+    // GamePlay.showMessage("Ура!! Атака!");
     this.allPositions.forEach((it) => this.gamePlay.deselectCell(it.position));
     const damage = Math.max(
       attacker.character.attack - target.character.defence,
